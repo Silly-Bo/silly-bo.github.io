@@ -100,5 +100,46 @@ hexo deploy    # 可以缩写 hexo d
 出现这个问题的主要原因是因为起名字的时候没有和前面博客名字保持一致，只需要在settings中将名字改成一致，保存后，刷新页面即可
 ![示例](http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322182508.png)
 
+### 三、 在其他电脑上操作
+1. 跟上面一样需要安装`安装git，安装node，安装hexo，安装配置name，配置邮箱名，配置ssh key密钥……等`
+```javascript
+git，
+配置name，
+配置邮箱名，
+生成ssh key  与github配置授权
+
+```
+2. 将github上面的代码克隆下来
+```hash
+git clone git@github.com:Silly-Bo/Silly-Bo.github.io.git
+```
+3. 进入到克隆的文件仓库中
+```hash
+cd xxx.github.io
+npm install 
+npm install hexo-deployer-git --save
+```
+4. 生成、部署
+```hash
+hexo g 
+hexo d
+```
+5. 可以写新博客了
+```hash
+hexo new newpage
+```
+6. 别忘记提交
+```hash
+git add . 
+git connit -m 'XXXX'
+git push
+```
+7. 如果已经在克隆过的电脑上要实用的话，需要先拉新项目
+```hash
+git pull
+```
+
+
+
 
 > 参考：[zjufangzh](https://blog.csdn.net/sinat_37781304/article/details/82729029)
