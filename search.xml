@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[hexo写博客与发布]]></title>
+    <url>%2F2019%2F03%2F22%2Ftest%2F</url>
+    <content type="text"><![CDATA[一、写博客刚开始时候不知道怎么设置标签和分类，然后网上找了一些资料搞定了，记录一下，先创建一个.md的文件放到 /source/_posts文件夹中，在刚建的.md文件中进行一系列的操作。 操作先在git bash中命令新建.md的文件1hexo new page &apos;_posts&apos; 然后source中会多出来一个文件posts文件夹，里面有个index.md文件，打开文件原来自动生成的是下面的样子 1234---title: _postsdate: 2019-03-22 15:38:48--- 这个时候根据自己文章的内容进行分类和添加标签，下面是这篇文件设定的标签和文件夹12345678910---title: hexo写博客与发布date: 2019-03-22 14:11:32categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级# - 实用技术 # 一级分类- 个人博客 # 二级分类 tags: # 这里写的标签会自动汇集到 tags 页面上- 实用 # 可配置多个标签，注意格式- 个人博客--- 这里我只设置了一个分类，默认是一级分类，生成后的图片如下 这里点击分类的时候显示就能显示自己设定的个人博客分类了 上面设定了两个标签，一个是实用，一个是个人博客，现在也一样可以显示了 补充一下：将本地图片截取的图片生成在线地址，我这里用的是七牛云地址已经贴上。 二、发布到github]]></content>
+      <categories>
+        <category>个人博客</category>
+      </categories>
+      <tags>
+        <tag>实用</tag>
+        <tag>个人博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F03%2F22%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[搭建此博客的目的就是为了能记录自己平时学习的点滴，之前学习的一些东西没有很好的整理，过了一段时间由于没有回看复习，导致很多还是忘记了，现在搭建这个小博客，就是希望能够以后学习的东西可以记录在一起，便于自己更好的复习查看。]]></content>
+  </entry>
+</search>
