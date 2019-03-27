@@ -1,13 +1,21 @@
 ---
 layout: ew
-title: js内置对象Math、Date……
+title: javascript内置对象Math、Date……
 date: 2019-03-26 19:26:45
 categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级
 - web前端 # 一级分类
 tags:   # 这里写的标签会自动汇集到 tags 页面上
 - javascript # 可配置多个标签，注意格式
 ---
-生活中如果你没有对象，那么在js中就有啦，因为人们常说“万物皆对象”。
+JavaScript提供了一些内置的对象和函数，内置对象提供编程的几种最常用的功能，JavaScript内置对象有以下几种。
+Math对象：处理所有的数学运算
+Date对象：处理日期和时间的存储、转化和表达
+String对象：处理所有的字符串操作
+Array对象：提供一个数组的模型、存储大量有序的数据
+Boolean对象：布尔对象，一个布尔变量就是一个布尔对象(没有可用的属性和方法)
+Number对象：数值对象,一个数值变量就是一个数值对象
+RegExp 对象表示正则表达式，它是对字符串执行模式匹配的强大工具
+Event对象：提供JavaScript事件的各种处理信息
  <!-- more -->
 ### 一、Math
 与其它全局对象不同的是, Math 不是一个构造器.  Math 的所有属性和方法都是静态的. 
@@ -73,20 +81,67 @@ Date.prototype
 ```
 #### 2. 方法
 ```javascript
-var mydate = new Date()           // 创建一个日期对象
-mydate.getFullYear()              // 返回年份 
-mydate.getMonth()                 // 返回月份数（0-11） 
-mydate.getDay()                   // 返回星期中第几天(0-6),想要得到星期几，需要+1
-mydate.getDate()                  // 返回日
-mydate.getHours()                 // 返回时
-mydate.getMinutes()               // 返回分
-mydate.getSeconds()               // 返回秒
-mydate.getTime()                  // 返回从1970年1月1日00:00到现在的毫秒数(时间戳)
-mydate.setFullYear(yearInt)       // 设置年份(4位数)
-mydate.setMonth(monthInt)         // 设置月份(0-11)
-mydate.setDate(dateInt)           // 设置日(1-31)
-mydate.setHours(hourInt)          // 设置小时数(0-23)
-mydate.setMinutes(minInt)         // 设置分钟数(0-59)
-mydate.setSeconds(secInt)         // 设置秒数(0-59)
-mydate.setMilliseconds(milliInt)  // 设置毫秒(0-999)
+var myDate = new Date()           // 创建一个日期对象
+myDate.getFullYear()              // 返回年份 
+myDate.getMonth()                 // 返回月份数（0-11） 
+myDate.getDay()                   // 返回星期中第几天(0-6),想要得到星期几，需要+1
+myDate.getDate()                  // 返回日
+myDate.getHours()                 // 返回时
+myDate.getMinutes()               // 返回分
+myDate.getSeconds()               // 返回秒
+myDate.getTime()                  // 返回从1970年1月1日00:00到现在的毫秒数(时间戳)
+myDate.setFullYear()              // 设置年份(4位数)
+myDate.setMonth()                 // 设置月份(0-11)
+myDate.setDate()                  // 设置日(1-31)
+myDate.setHours()                 // 设置小时数(0-23)
+myDate.setMinutes()               // 设置分钟数(0-59)
+myDate.setSeconds()               // 设置秒数(0-59)
+myDate.setMilliseconds()          // 设置毫秒(0-999)
 ```
+
+### 三、String
+#### 1. 属性
+```javascript
+constructor    // 对创建该对象的函数的引用
+length         // 字符串的长度
+prototype      // 允许您向对象添加属性和方法
+```
+#### 2. 方法
+```javascript
+anchor()       // 创建 HTML 锚。
+big()	       // 用大号字体显示字符串。	
+blink()	       // 显示闪动字符串。	
+bold()	       // 使用粗体显示字符串。
+charAt()	   // 返回在指定位置的字符。
+charCodeAt()   // 返回在指定的位置的字符的 Unicode 编码。	
+concat()	   // 连接字符串。	
+fixed()	       // 以打字机文本显示字符串。	
+fontcolor()	   // 使用指定的颜色来显示字符串。
+fontsize()	   // 使用指定的尺寸来显示字符串。
+fromCharCode() // 从字符编码创建一个字符串。
+indexOf()	   // 检索字符串。
+italics()	   // 使用斜体显示字符串。
+lastIndexOf()  // 从后向前搜索字符串。
+link()	       // 将字符串显示为链接。
+localeCompare()// 用本地特定的顺序来比较两个字符串。
+match()	       // 找到一个或多个正则表达式的匹配。
+replace()	   // 替换与正则表达式匹配的子串。
+search()	   // 检索与正则表达式相匹配的值。
+slice()	       // 提取字符串的片断，并在新的字符串中返回被提取的部分。
+small()	       // 使用小字号来显示字符串。
+split()	       // 把字符串分割为字符串数组。
+strike()	   // 使用删除线来显示字符串。
+sub()	       // 把字符串显示为下标。	
+substr()	   // 从起始索引号提取字符串中指定数目的字符。
+substring()	   // 提取字符串中两个指定的索引号之间的字符。
+sup()	       // 把字符串显示为上标。
+toLocaleLowerCase()	// 把字符串转换为小写。
+toLocaleUpperCase() // 把字符串转换为大写。
+toLowerCase()	    // 把字符串转换为小写。
+toUpperCase()	    // 把字符串转换为大写。
+toSource()	        // 代表对象的源代码。
+toString()	        // 返回字符串。
+valueOf()	        // 返回某个字符串对象的原始值。
+```
+
+>参考：[W3school](https://www.jb51.net/w3school/js/jsref_obj_regexp.htm)
