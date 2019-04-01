@@ -110,38 +110,59 @@ prototype      // 允许您向对象添加属性和方法
 ```javascript
 anchor()       // 创建 HTML 锚。
 big()	       // 用大号字体显示字符串。	
+small()	       // 使用小字号来显示字符串。
 blink()	       // 显示闪动字符串。	
 bold()	       // 使用粗体显示字符串。
-charAt()	   // 返回在指定位置的字符。
-charCodeAt()   // 返回在指定的位置的字符的 Unicode 编码。	
-concat()	   // 连接字符串。	
 fixed()	       // 以打字机文本显示字符串。	
-fontcolor()	   // 使用指定的颜色来显示字符串。
-fontsize()	   // 使用指定的尺寸来显示字符串。
+fontcolor()    // 使用指定的颜色来显示字符串。
+fontsize()     // 使用指定的尺寸来显示字符串。
 fromCharCode() // 从字符编码创建一个字符串。
-indexOf()	   // 检索字符串。
-italics()	   // 使用斜体显示字符串。
-lastIndexOf()  // 从后向前搜索字符串。
-link()	       // 将字符串显示为链接。
+italics()      // 使用斜体显示字符串。
 localeCompare()// 用本地特定的顺序来比较两个字符串。
-match()	       // 找到一个或多个正则表达式的匹配。
-replace()	   // 替换与正则表达式匹配的子串。
-search()	   // 检索与正则表达式相匹配的值。
-slice()	       // 提取字符串的片断，并在新的字符串中返回被提取的部分。
-small()	       // 使用小字号来显示字符串。
-split()	       // 把字符串分割为字符串数组。
-strike()	   // 使用删除线来显示字符串。
-sub()	       // 把字符串显示为下标。	
-substr()	   // 从起始索引号提取字符串中指定数目的字符。
-substring()	   // 提取字符串中两个指定的索引号之间的字符。
-sup()	       // 把字符串显示为上标。
-toLocaleLowerCase()	// 把字符串转换为小写。
-toLocaleUpperCase() // 把字符串转换为大写。
+toSource()     // 代表对象的源代码。
+
+link()         // 将字符串显示为链接。
+lastIndexOf()  // 从后向前搜索字符串。
+indexOf()      // 检索字符串。
+charAt()       // 返回在指定位置的字符。
+charCodeAt()   // 返回在指定的位置的字符的 Unicode 编码。	
+concat()       // 连接字符串。
+match()        // 找到一个或多个正则表达式的匹配。
+replace()      // 替换与正则表达式匹配的子串。
+search()       // 检索与正则表达式相匹配的值。
+slice()        // 提取字符串的片断，并在新的字符串中返回被提取的部分。
+split()        // 把字符串分割为字符串数组。
+strike()       // 使用删除线来显示字符串。
+sup()          // 把字符串显示为上标。
+sub()          // 把字符串显示为下标。	
+substr()       // 从起始索引号提取字符串中指定数目的字符。
+substring()    // 提取字符串中两个指定的索引号之间的字符。
+toLocaleLowerCase() // 把字符串转换为小写，通常和toLowerCase()一样。
+toLocaleUpperCase() // 把字符串转换为大写，通常和toUpperCase()一样。
 toLowerCase()	    // 把字符串转换为小写。
 toUpperCase()	    // 把字符串转换为大写。
-toSource()	        // 代表对象的源代码。
-toString()	        // 返回字符串。
-valueOf()	        // 返回某个字符串对象的原始值。
+toString()          // 返回字符串。
+valueOf()           // 返回某个字符串对象的原始值。
+```
+#### 举栗子
+因为string平时操作的太多了，举个例子先
+1. `anchor()`  创建 HTML 锚。
+  这里加这么多的`</br>`为的就是让页面出现滚动条，这个的时候点击`html`中自己定义的锚链接按钮，然后就会链接到通过`str.anchor('anchorname')`方法定义锚点上面了
+```
+<a href="#anchorname">锚链接</a>
+ var str  = 'hello world'
+        document.write(`</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>` + str.anchor('anchorname'))
+```
+2. `link()` 用于把字符串显示为超链接。
+    这里是通过`link()`方法，生成`a`标签，然后将地址挂在a标签的`href`上
+```javascript
+    var str = '点击我传送至百度'
+   document.write(str.link('https://www.baidu.com')) 
+
+```
+1. `lastIndexOf()` 从后向前搜索字符串。
+```javascript
+
 ```
 
 >参考：[W3school](https://www.jb51.net/w3school/js/jsref_obj_regexp.htm)
