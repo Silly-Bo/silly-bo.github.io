@@ -131,10 +131,10 @@ hexo new newpage
 6. 别忘记提交
 ```hash
 git add . 
-git connit -m 'XXXX'
+git commit -m 'XXXX'
 git push
 ```
-7. 如果已经在克隆过的电脑上要实用的话，需要先拉新项目
+7. 如果已经在克隆过的电脑上要使用的话，需要先拉新项目
 ```hash
 git pull
 ```
