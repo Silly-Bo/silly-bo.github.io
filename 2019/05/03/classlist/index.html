@@ -113,18 +113,18 @@
 
 
 
-  <meta name="description" content="element.classList 操作元素的class属性，obj.className操作class, 但是二者区别还是很大的。">
+  <meta name="description" content="Element.classList 操作元素的class属性，Element.className操作class, 但是二者区别还是很大的。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原生js中的classList">
 <meta property="og:url" content="http://yoursite.com/2019/05/03/classlist/index.html">
 <meta property="og:site_name" content="YuBo&#39;s Blog">
-<meta property="og:description" content="element.classList 操作元素的class属性，obj.className操作class, 但是二者区别还是很大的。">
+<meta property="og:description" content="Element.classList 操作元素的class属性，Element.className操作class, 但是二者区别还是很大的。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-03T14:22:31.965Z">
+<meta property="og:updated_time" content="2019-05-03T14:46:30.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原生js中的classList">
-<meta name="twitter:description" content="element.classList 操作元素的class属性，obj.className操作class, 但是二者区别还是很大的。">
+<meta name="twitter:description" content="Element.classList 操作元素的class属性，Element.className操作class, 但是二者区别还是很大的。">
 
 
 
@@ -433,7 +433,7 @@
                 
               
 
-              <time title="创建时间：2019-05-03 21:27:31 / 修改时间：22:22:31" itemprop="dateCreated datePublished" datetime="2019-05-03T21:27:31+08:00">2019-05-03</time>
+              <time title="创建时间：2019-05-03 21:27:31 / 修改时间：22:46:30" itemprop="dateCreated datePublished" datetime="2019-05-03T21:27:31+08:00">2019-05-03</time>
             
 
             
@@ -497,7 +497,7 @@
       
 
       
-        <p><code>element.classList</code> 操作元素的class属性，<code>obj.className</code>操作class, 但是二者区别还是很大的。<br> <a id="more"></a></p>
+        <p><code>Element.classList</code> 操作元素的class属性，<code>Element.className</code>操作class, 但是二者区别还是很大的。<br> <a id="more"></a></p>
 <h4 id="className"><a href="#className" class="headerlink" title="className"></a>className</h4><p>这里通过点击事件，直接就是将<code>class=&#39;box&#39;</code>替换成了<code>class=&#39;active&#39;</code>，元素上原来设置的<code>.box</code>样式也完全被<code>.active</code>替换掉了。<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"box"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"box"</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'#box'</span>);</span><br><span class="line"></span><br><span class="line">box.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    box.className = <span class="string">"active"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="classList"><a href="#classList" class="headerlink" title="classList"></a>classList</h4><p>如果换成<code>classList</code>来设置，那么可以支持两个设置的属性同事存在，之前设置的那个的属性不会被覆盖<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'#box'</span>);</span><br><span class="line"></span><br><span class="line">box.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    box.classList.add(<span class="string">"active"</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><code>classlist</code>几种用法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="built_in">String</span> [, <span class="built_in">String</span>])  <span class="comment">//添加指定的类值。如果这些类已经存在于元素的属性中，那么它们将被忽略。</span></span><br><span class="line">remove(<span class="built_in">String</span> [,<span class="built_in">String</span>]) <span class="comment">//删除指定的类值。</span></span><br><span class="line">item (<span class="built_in">Number</span>) <span class="comment">//按集合中的索引返回类值。</span></span><br><span class="line">toggle (tring [, force]) <span class="comment">//当只有一个参数时：切换 class value; 即如果类存在，则删除它并返回false，如果不存在，则添加它并返回true。当存在第二个参数时：如果第二个参数的计算结果为true，则添加指定的类值，如果计算结果为false，则删除它</span></span><br><span class="line">contains(<span class="built_in">String</span>) <span class="comment">//检查元素的类属性中是否存在指定的类值。</span></span><br><span class="line">replace(oldClass, newClass) <span class="comment">//用一个新类替换已有类。</span></span><br></pre></td></tr></table></figure></p>
