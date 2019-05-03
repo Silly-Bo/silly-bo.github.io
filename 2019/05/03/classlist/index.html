@@ -113,32 +113,25 @@
 
 
 
-  <meta name="description" content="一、写博客刚开始时候不知道怎么设置标签和分类，然后网上找了一些资料搞定了，记录一下，先创建一个.md的文件放到 /source/_posts文件夹中，在刚建的.md文件中进行一系列的操作。">
-<meta name="keywords" content="实用,个人博客">
+  <meta name="description" content="element.classList 操作元素的class属性，obj.className操作class, 但是二者区别还是很大的。">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo写博客与发布">
-<meta property="og:url" content="http://yoursite.com/2019/03/22/Hexo/index.html">
+<meta property="og:title" content="原生js中的classList">
+<meta property="og:url" content="http://yoursite.com/2019/05/03/classlist/index.html">
 <meta property="og:site_name" content="YuBo&#39;s Blog">
-<meta property="og:description" content="一、写博客刚开始时候不知道怎么设置标签和分类，然后网上找了一些资料搞定了，记录一下，先创建一个.md的文件放到 /source/_posts文件夹中，在刚建的.md文件中进行一系列的操作。">
+<meta property="og:description" content="element.classList 操作元素的class属性，obj.className操作class, 但是二者区别还是很大的。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322154430.png">
-<meta property="og:image" content="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322161547.png">
-<meta property="og:image" content="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322162122.png">
-<meta property="og:image" content="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322173438.png">
-<meta property="og:image" content="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322174135.png">
-<meta property="og:image" content="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322182508.png">
-<meta property="og:updated_time" content="2019-04-16T15:29:26.182Z">
+<meta property="og:updated_time" content="2019-05-03T14:22:31.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo写博客与发布">
-<meta name="twitter:description" content="一、写博客刚开始时候不知道怎么设置标签和分类，然后网上找了一些资料搞定了，记录一下，先创建一个.md的文件放到 /source/_posts文件夹中，在刚建的.md文件中进行一系列的操作。">
-<meta name="twitter:image" content="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322154430.png">
+<meta name="twitter:title" content="原生js中的classList">
+<meta name="twitter:description" content="element.classList 操作元素的class属性，obj.className操作class, 但是二者区别还是很大的。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/22/Hexo/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/03/classlist/">
 
 
 
@@ -148,7 +141,7 @@
   };
 </script>
 
-  <title>hexo写博客与发布 | YuBo's Blog</title>
+  <title>原生js中的classList | YuBo's Blog</title>
   
 
 
@@ -397,7 +390,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/22/Hexo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/03/classlist/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YuBo">
@@ -414,7 +407,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo写博客与发布
+          <h1 class="post-title" itemprop="name headline">原生js中的classList
 
               
             
@@ -440,24 +433,12 @@
                 
               
 
-              <time title="创建时间：2019-03-22 14:11:32" itemprop="dateCreated datePublished" datetime="2019-03-22T14:11:32+08:00">2019-03-22</time>
+              <time title="创建时间：2019-05-03 21:27:31 / 修改时间：22:22:31" itemprop="dateCreated datePublished" datetime="2019-05-03T21:27:31+08:00">2019-05-03</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-16 23:29:26" itemprop="dateModified" datetime="2019-04-16T23:29:26+08:00">2019-04-16</time>
               
             
           </span>
@@ -474,7 +455,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/个人博客/" itemprop="url" rel="index"><span itemprop="name">个人博客</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web前端/" itemprop="url" rel="index"><span itemprop="name">web前端</span></a></span>
 
                 
                 
@@ -516,69 +497,11 @@
       
 
       
-        <h3 id="一、写博客"><a href="#一、写博客" class="headerlink" title="一、写博客"></a>一、写博客</h3><p>刚开始时候不知道怎么设置标签和分类，然后网上找了一些资料搞定了，记录一下，先创建一个.md的文件放到 <code>/source/_posts</code>文件夹中，在刚建的.md文件中进行一系列的操作。<br> <a id="more"></a></p>
-<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><p>先在git bash中命令新建.md的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new newpapername</span><br></pre></td></tr></table></figure></p>
-<p>然后<code>source/_posts</code>文件夹下面新创建个newpapername.md文件，打开newpapername.md文件就可以写自己的东西了，原来自动生成的是下面的样子</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: newpapername</span><br><span class="line">date: <span class="number">2019</span><span class="number">-03</span><span class="number">-22</span> <span class="number">15</span>:<span class="number">38</span>:<span class="number">48</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>这个时候根据自己文章的内容进行分类和添加标签，下面是这篇文件设定的标签和文件夹<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo写博客与发布</span><br><span class="line">date: <span class="number">2019</span><span class="number">-03</span><span class="number">-22</span> <span class="number">14</span>:<span class="number">11</span>:<span class="number">32</span></span><br><span class="line">categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级</span><br><span class="line"># - 实用技术 # 一级分类</span><br><span class="line">- 个人博客 # 二级分类 </span><br><span class="line">tags:   # 这里写的标签会自动汇集到 tags 页面上</span><br><span class="line">- 实用 # 可配置多个标签，注意格式</span><br><span class="line">- 个人博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>这里我只设置了一个分类，默认是一级分类，生成后的图片如下<br><img src="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322154430.png" alt="示例"></p>
-<p>这里点击分类的时候显示就能显示自己设定的个人博客分类了<br><img src="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322161547.png" alt="示例"></p>
-<p>上面设定了两个标签，一个是实用，一个是个人博客，现在也一样可以显示了<br><img src="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322162122.png" alt="示例"></p>
-<p>补充一下：将本地图片截取的图片生成在线地址，我这里用的是<a href="https://portal.qiniu.com/signup?code=3lpiscgrmeb82" target="_blank" rel="noopener">七牛云</a>地址已经贴上。</p>
-<h3 id="二、发布到github"><a href="#二、发布到github" class="headerlink" title="二、发布到github"></a>二、发布到github</h3><h4 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h4><ol>
-<li><p>生成SSH添加到GitHub<br>在git bash 中输入命令，设置用户名和邮箱</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"yourname"</span></span><br><span class="line">git config --global user.email <span class="string">"youremail"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后创建SSH,一路回车</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>这个时候电脑C盘里面就生成了.ssh的文件夹<br><img src="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322173438.png" alt="示例"></p>
-<p>简单的说<code>ssh</code>就是一个密钥，<code>id_rsa</code>是私人秘钥，不能给别人看的，<code>id_rsa.pub</code>是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。然后在GitHub的settings中找到SSH and GPG keys 选项<br><img src="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322174135.png" alt="示例"></p>
-<ol start="3">
-<li><p>查看是否成功</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将hexo部署到GitHub<br>我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开站点配置文件 _config.yml，翻到最后，修改<br>YourgithubName 就是你创建的gitHub名字。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:<span class="comment">//github.com/YourgithubName/YourgithubName.github.io.git</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装<code>deploy-git</code>,也就是部署的命令,这样你才能用命令部署到GitHub。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean      </span><br><span class="line">hexo generate  <span class="comment"># 可以缩写 hexo g</span></span><br><span class="line">hexo deploy    <span class="comment"># 可以缩写 hexo d</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>注意deploy时可能要你输入username和password。</p>
-<ol start="7">
-<li>部署到GitHub出现404页面<br>出现这个问题的主要原因是因为起名字的时候没有和前面博客名字保持一致，只需要在settings中将名字改成一致，保存后，刷新页面即可<br><img src="http://pord6y7be.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20190322182508.png" alt="示例"></li>
-</ol>
-<h3 id="三、-在其他电脑上操作"><a href="#三、-在其他电脑上操作" class="headerlink" title="三、 在其他电脑上操作"></a>三、 在其他电脑上操作</h3><ol>
-<li><p>跟上面一样需要安装<code>安装git，安装node，安装hexo，安装配置name，配置邮箱名，配置ssh key密钥……等</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git，</span><br><span class="line">配置name，</span><br><span class="line">配置邮箱名，</span><br><span class="line">生成ssh key  与github配置授权</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将github上面的代码克隆下来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:Silly-Bo/Silly-Bo.github.io.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进入到克隆的文件仓库中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd xxx.github.io</span><br><span class="line">npm install </span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>生成、部署</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>可以写新博客了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new newpage</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>别忘记提交</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m &apos;XXXX&apos;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果已经在克隆过的电脑上要使用的话，需要先拉新项目</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>参考：<a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">zjufangzh</a></p>
-</blockquote>
+        <p><code>element.classList</code> 操作元素的class属性，<code>obj.className</code>操作class, 但是二者区别还是很大的。<br> <a id="more"></a></p>
+<h4 id="className"><a href="#className" class="headerlink" title="className"></a>className</h4><p>这里通过点击事件，直接就是将<code>class=&#39;box&#39;</code>替换成了<code>class=&#39;active&#39;</code>，元素上原来设置的<code>.box</code>样式也完全被<code>.active</code>替换掉了。<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"box"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"box"</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'#box'</span>);</span><br><span class="line"></span><br><span class="line">box.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    box.className = <span class="string">"active"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="classList"><a href="#classList" class="headerlink" title="classList"></a>classList</h4><p>如果换成<code>classList</code>来设置，那么可以支持两个设置的属性同事存在，之前设置的那个的属性不会被覆盖<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'#box'</span>);</span><br><span class="line"></span><br><span class="line">box.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    box.classList.add(<span class="string">"active"</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>classlist</code>几种用法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="built_in">String</span> [, <span class="built_in">String</span>])  <span class="comment">//添加指定的类值。如果这些类已经存在于元素的属性中，那么它们将被忽略。</span></span><br><span class="line">remove(<span class="built_in">String</span> [,<span class="built_in">String</span>]) <span class="comment">//删除指定的类值。</span></span><br><span class="line">item (<span class="built_in">Number</span>) <span class="comment">//按集合中的索引返回类值。</span></span><br><span class="line">toggle (tring [, force]) <span class="comment">//当只有一个参数时：切换 class value; 即如果类存在，则删除它并返回false，如果不存在，则添加它并返回true。当存在第二个参数时：如果第二个参数的计算结果为true，则添加指定的类值，如果计算结果为false，则删除它</span></span><br><span class="line">contains(<span class="built_in">String</span>) <span class="comment">//检查元素的类属性中是否存在指定的类值。</span></span><br><span class="line">replace(oldClass, newClass) <span class="comment">//用一个新类替换已有类。</span></span><br></pre></td></tr></table></figure></p>
+<p>示例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">div.className = <span class="string">'foo'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// our starting state: &lt;div class="foo"&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(div.outerHTML);</span><br><span class="line"></span><br><span class="line"><span class="comment">// use the classList API to remove and add classes</span></span><br><span class="line">div.classList.remove(<span class="string">"foo"</span>);</span><br><span class="line">div.classList.add(<span class="string">"anotherclass"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// &lt;div class="anotherclass"&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(div.outerHTML);</span><br><span class="line"></span><br><span class="line"><span class="comment">// if visible is set remove it, otherwise add it</span></span><br><span class="line">div.classList.toggle(<span class="string">"visible"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// add/remove visible, depending on test conditional, i less than 10</span></span><br><span class="line">div.classList.toggle(<span class="string">"visible"</span>, i &lt; <span class="number">10</span> );</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(div.classList.contains(<span class="string">"foo"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// add or remove multiple classes</span></span><br><span class="line">div.classList.add(<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>);</span><br><span class="line">div.classList.remove(<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// add or remove multiple classes using spread syntax</span></span><br><span class="line"><span class="keyword">const</span> cls = [<span class="string">"foo"</span>, <span class="string">"bar"</span>];</span><br><span class="line">div.classList.add(...cls); </span><br><span class="line">div.classList.remove(...cls);</span><br><span class="line"></span><br><span class="line"><span class="comment">// replace class "foo" with class "bar"</span></span><br><span class="line">div.classList.replace(<span class="string">"foo"</span>, <span class="string">"bar"</span>);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -602,9 +525,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/实用/" rel="tag"><i class="fa fa-tag"></i>实用</a>
-          
-            <a href="/tags/个人博客/" rel="tag"><i class="fa fa-tag"></i>个人博客</a>
+            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i>javascript</a>
           
         </div>
       
@@ -617,8 +538,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/22/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/04/16/vuex/" rel="next" title="vuex状态管理">
+                <i class="fa fa-chevron-left"></i> vuex状态管理
               </a>
             
           </div>
@@ -626,10 +547,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/24/newpapername/" rel="prev" title="Nginx安装和基础代理配置">
-                Nginx安装和基础代理配置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -840,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、写博客"><span class="nav-number">1.</span> <span class="nav-text">一、写博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作"><span class="nav-number">1.1.</span> <span class="nav-text">操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、发布到github"><span class="nav-number">2.</span> <span class="nav-text">二、发布到github</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作-1"><span class="nav-number">2.1.</span> <span class="nav-text">操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、-在其他电脑上操作"><span class="nav-number">3.</span> <span class="nav-text">三、 在其他电脑上操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#className"><span class="nav-number">1.</span> <span class="nav-text">className</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#classList"><span class="nav-number">2.</span> <span class="nav-text">classList</span></a></li></ol></div>
             
 
           </div>
