@@ -7,7 +7,7 @@ tags:   # 这里写的标签会自动汇集到 tags 页面上
 - javascript # 可配置多个标签，注意格式
 ---
 
-`element.classList` 操作元素的class属性，`obj.className`操作class, 但是二者区别还是很大的。
+`Element.classList` 操作元素的class属性，`Element.className`操作class, 但是二者区别还是很大的。
  <!-- more -->
  #### className
 这里通过点击事件，直接就是将`class='box'`替换成了`class='active'`，元素上原来设置的`.box`样式也完全被`.active`替换掉了。
