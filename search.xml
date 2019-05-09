@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vue中v-model实现原理]]></title>
+    <url>%2F2019%2F05%2F09%2Fv-model%2F</url>
+    <content type="text"><![CDATA[vue中有很多指令，今天记录一下v-model指令的实现原理 一、先了解下input输入框中的 input事件oninput事件在用户在输入元素值发生变化时立即触发；该事件在 &lt;input&gt; 或 &lt;textarea&gt; 元素的值发生改变时触发。 缺点： 从脚本中修改值不会触发事件。 从浏览器下拉提示框里选取值时不会触发。 IE9 以下不支持，所以IE9以下可用onpropertychange事件（只在IE下支持，其他浏览器不支持 ）代替。12&lt;!-- js下面的方法使用 --&gt; &lt;input type="text" oninput="fn()"&gt; 二、现在贴出在vue中的实现原理123456789101112131415161718&lt;div id="app"&gt; &lt;input type="text" v-bind:value="msg" v-on:input="change"&gt; &lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;&lt;/div&gt;&lt;script&gt; new Vue(&#123; el:'#app', data:&#123; msg: '我是内容' &#125;, methods: &#123; change(e)&#123; console.log(e.target.value) this.msg = e.target.value &#125; &#125;, &#125;)&lt;/script&gt;]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>VUE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[原生js中的classList]]></title>
     <url>%2F2019%2F05%2F03%2Fclasslist%2F</url>
     <content type="text"><![CDATA[Element.classList 操作元素的class属性，Element.className操作class, 但是二者区别还是很大的。 className这里通过点击事件，直接就是将class=&#39;box&#39;替换成了class=&#39;active&#39;，元素上原来设置的.box样式也完全被.active替换掉了。 1234567&lt;div id="box" class="box"&gt;&lt;/div&gt;var box = document.querySelector('#box');box.onclick = function()&#123; box.className = "active"&#125; classList如果换成classList来设置，那么可以支持两个设置的属性同事存在，之前设置的那个的属性不会被覆盖1234567var box = document.querySelector('#box');box.onclick = function()&#123; box.classList.add("active")&#125; classlist几种用法123456add(String [, String]) //添加指定的类值。如果这些类已经存在于元素的属性中，那么它们将被忽略。remove(String [,String]) //删除指定的类值。item (Number) //按集合中的索引返回类值。toggle (tring [, force]) //当只有一个参数时：切换 class value; 即如果类存在，则删除它并返回false，如果不存在，则添加它并返回true。当存在第二个参数时：如果第二个参数的计算结果为true，则添加指定的类值，如果计算结果为false，则删除它contains(String) //检查元素的类属性中是否存在指定的类值。replace(oldClass, newClass) //用一个新类替换已有类。 示例1234567891011121314151617181920212223242526272829303132const div = document.createElement('div');div.className = 'foo';// our starting state: &lt;div class="foo"&gt;&lt;/div&gt;console.log(div.outerHTML);// use the classList API to remove and add classesdiv.classList.remove("foo");div.classList.add("anotherclass");// &lt;div class="anotherclass"&gt;&lt;/div&gt;console.log(div.outerHTML);// if visible is set remove it, otherwise add itdiv.classList.toggle("visible");// add/remove visible, depending on test conditional, i less than 10div.classList.toggle("visible", i &lt; 10 );console.log(div.classList.contains("foo"));// add or remove multiple classesdiv.classList.add("foo", "bar", "baz");div.classList.remove("foo", "bar", "baz");// add or remove multiple classes using spread syntaxconst cls = ["foo", "bar"];div.classList.add(...cls); div.classList.remove(...cls);// replace class "foo" with class "bar"div.classList.replace("foo", "bar");]]></content>
