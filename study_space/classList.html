@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        height: 100px;
+        width: 100px;
+        border: 2px solid #000000;
+        background: red;
+    }
+    .active{
+        height: 200px;
+        width: 200px;
+        background: blue;
+    }
+</style>
+<body>
+    <div id="box" class="box active aaa bbb"></div>
+    <script>
+
+        var box = document.querySelector('#box');
+
+        box.onclick = function(){
+            // box.classList.add("active")
+            console.log(box.classList.item(0))
+            console.log(box.classList.contains('box'))
+            console.log(box.classList.replace('box','ccc'))
+        }
+
+    </script>
+</body>
+</html>

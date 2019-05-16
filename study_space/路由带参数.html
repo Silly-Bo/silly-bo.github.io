@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        // 2. 让vue使用VueRouter创建
+        Vue.use(VueRouter)
+
+        var Login={
+            template:`
+            <div>我是登陆页</div>
+            `
+        }
+        var Regist={
+            template:`
+             <div>我是注册页</div>
+            `
+        }
+
+        var router = new VueRouter({
+            routes:[
+                //理由匹配规则
+                {
+                    path: '/login:ids',
+                    name: 'Log',
+                    component: Login
+                },
+                {
+                    path: '/regist',
+                    name: 'Regs',
+                    component: Regist
+                }
+            ]
+        })
+
+        var App ={
+            template:`
+                <div>
+                    <router-link :to="{name:'Log',params:{ids:123}}">登陆</router-link>   
+                    <router-link :to="{name:'Regs',query:{username:'zs'}}">注册</router-link>  
+                    <router-view></router-view>  
+                </div>
+            `,
+
+        }
+        
+        new Vue({
+            router,
+            el:'#app',
+            template:'<App/>',
+            components:{
+                App
+            }
+
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f1(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log('第一步')
+                    resolve('成功')
+                },1000)
+            })
+        }
+
+        var ol= {
+            say: async function(){
+                console.log('say函数')
+                const res = await f1()
+            },
+            run: async function(){
+                console.log('run函数')
+                const res2 = await f1()
+            }
+        }
+        async function fn(){
+            await ol.say()
+            await ol.run()
+        }
+        fn()
+        
+    </script>
+</body>
+</html>

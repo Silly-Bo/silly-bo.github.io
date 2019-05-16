@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <App/>
+    </div>
+    <script>
+        var Vtest={
+           template:`<div>
+                       <button ref="btn">我是按钮一</button>
+                       <button>我是按钮二</button>
+                   </div>`,
+           methods:{
+           },
+
+       }
+        Vue.component('subM',Vtest)
+        
+        var App = {
+            data(){
+                return {
+                    isShow: false
+                }
+            },
+            //  vue中内置的组件 keep-alive 组件切换过程中将状态保存在内存中，避免重复渲染DOM
+            template:`<div>
+                        <button ref="btn">按钮一</button>
+                        <subM ref='btns'></subM>
+                        <input ref="input" v-show="isShow"></input>
+                    </div>`,
+            components:{
+            },
+            beforeCreate() {
+                console.log(this.$refs.btn)
+            },
+            created(){
+                // 组件创建之后 使用该组件就会调用created方法
+                console.log(this.$refs.btn)
+            },
+            beforeMount(){
+                // 挂载数据到DOM之前调用
+                console.log(this.$refs.btn)
+                
+            },
+            mounted(){
+                this.isShow = true;
+                // 挂载数据到DOM之后调用 vue作用以后的DOM
+                console.log(this.$refs.btn)
+                console.log(this.$refs.input)
+                // $nextTick() 是在DOM 更新循环之后执行回调，在修改数据之后，使用$nextTick()可以获取到更新后的DOM
+                this.$nextTick(function(){
+                    this.$refs.input.focus()
+                })
+            },
+            beforeUpdate(){
+                // 更新DOM之前 调用钩子函数，可以获取原始的DOM
+              
+            },
+            updated(){
+                // 更新DOM之后 调用钩子函数，可以获取最新的DOM
+            },
+        
+        }
+        new Vue({
+            el:'#app',
+            data:{
+
+            },
+            template:'<App/>', 
+            components:{
+                App
+            }
+
+        })
+    </script>
+</body>
+</html>

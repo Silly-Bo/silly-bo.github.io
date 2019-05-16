@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="msg">
+        <p>{{msg}}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'',
+                List:[{id:'1',text:'我是内容'}]
+            },
+            //监听单个属性 
+            watch:{
+                msg:function(newVal,oldVal){
+                    console.log(newVal,oldVal)
+                },
+                List:function(){
+                    console.log('ssssss')
+                }
+
+            }
+        })
+    
+    </script>
+
+</body>
+</html>

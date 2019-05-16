@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        Vue.use(VueRouter);
+        var Timeline = {
+            template: `<div>
+                    <router-link :to="{name:'Comdesc',params:{id:'andorid'}}">安卓</router-link>
+                    <router-link :to="{name:'Comdesc',params:{id:'fontend'}}">前端</router-link>
+                    <router-view></router-view>
+                </div>`
+        }
+        var Pins = {
+            template:`
+            <div>我是沸点</div>`
+        }
+        var Comdesc = {
+            data(){
+                return {
+                    msg:''
+                }
+            },
+            template: `
+                <div>
+                    {{msg}}
+                </div>
+            `,
+            created() {
+                this.msg = "andorid"
+                // console.log(this.$route);
+                // this.msg = this.$route.params.id
+                
+            },
+            watch:{
+                "$route"(to,form){
+                    this.msg = to.params.id
+                    console.log(to)
+                    console.log(form)
+                }
+            },
+            
+        }
+        
+        var router = new VueRouter({
+            routes:[
+                {
+                    path: '/timeline',
+                    name: 'timeline',
+                    component: Timeline,
+                    children:[
+                        {
+                            path:'/timeline/:id',
+                            name: 'Comdesc',
+                            component: Comdesc
+                        },
+                    ]
+                },
+                {
+                    path: '/pins',
+                    name: 'pins',
+                    component: Pins,
+                    children:[]
+                }
+            ]
+        })
+
+        var App = {
+            template:`<div>
+                    <router-link to='/timeline'>首页</router-link>
+                    <router-link to='/pins'>沸点</router-link>
+                    <router-view></router-view>
+                </div>`
+        }
+
+        new Vue({
+            router,
+            el:'#app',
+            template: '<App/>',
+            components:{
+                App
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data = [
+            {name:'Liming',age:'25'},
+            {name:'Liming',age:'26'},
+            {name:'Liming',age:'27'},
+            {name:'Liming',age:'28'},
+            {name:'Liming',age:'29'},
+            {name:'Liming',age:'30'},
+            {name:'Liming',age:'31'},
+            {name:'Liming',age:'32'},
+            {name:'Liming',age:'33'},
+            {name:'Liming',age:'34'},
+        ]
+            var result = [];
+            for(var i=0;i<data.length;i+=5){
+                result.push(data.slice(i,i+5));
+            }    
+            console.log(result)
+    </script>
+</body>
+</html>

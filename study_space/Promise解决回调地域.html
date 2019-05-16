@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f1(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log('第一步')
+                    resolve() //告诉外界这里的异步操作执行完，是一个标记
+                })
+            })
+        }
+        function f2(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log('第二步')
+                    resolve()
+                })
+            })
+        }
+        f1().then(res=>{
+            //返回一个Promise对象
+            return f2()
+        }).then(res=>{
+            return f1()
+        }).then(res=>{
+            console.log('完成')
+        })
+        
+    </script>
+</body>
+</html>

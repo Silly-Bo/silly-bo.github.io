@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>局部组件</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<style>
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.main{
+    height: 100%;
+}
+.main .head{
+    width: 100%;
+    height: 80px;
+    background: seagreen;
+}
+.main2{
+    width: 100%;
+    height: 1000px;
+}
+.main2 .aside{
+    float: left;
+    width: 30%;
+    height: 100%;
+    background: slateblue;
+}
+.main2 .content{
+    float: left;
+    width: 70%;
+    height: 100%;
+    background: skyblue;
+}
+.default{
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition: .1s;
+    font-weight: 500;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+.primary{
+    color: #fff;
+    background-color: #409eff;
+    border-color: #409eff;
+}
+</style>
+<body>
+    <div id="app">
+    </div>
+    
+    <script>
+        // 全局组件
+        Vue.component('Vbtn',{
+            data(){
+                return{
+
+                }
+            },
+            template: `<button class="default" :class="type">
+                         <solt><slot>
+                    </button>`,
+            props:['type']
+        })
+
+        // 局部组件 声子 挂子 用子
+        var Vheader= {
+            data(){
+                return {
+                }
+            },
+            template:`<div class="head">我是头部组件
+                        <Vbtn type="default">默认按钮</Vbtn>    
+                    </div>`
+        }
+        // 侧边
+        var Vaside = {
+            data(){
+                return {
+
+                }
+            },
+            template:`<div class="aside">我是侧边组件
+                    <Vbtn type="primary">侧边按钮</Vbtn> 
+                    <li>
+                        这是第一个值
+                        <slot name="one"></slot>
+                        这是第二个值 
+                        <slot name= "two"></slot>   
+                    </li>
+                </div>`,
+        }
+        // 内容
+        var Vcontent = {
+
+            data(){
+                return {
+
+                }
+            },
+            template:`<div class="content">我是内容组件
+                    <Vbtn type="primary">内容按钮</Vbtn> 
+                    <ul>
+                        <li v-for="(item, index) in mylist">
+                            <h3>{{item.id}}</h3>    
+                            <h3>{{item.title}}</h3>    
+                            <h3>{{item.content}}</h3>    
+                        </li>
+                    </ul>
+                </div>`,
+            props:['mylist']
+        }
+
+        // 入口
+        var App = {
+            data(){
+                return {
+                    List:[
+                        {id:1,title:'我是第一个',content:'我是第一个内容'},
+                        {id:2,title:'我是第二个',content:'我是第二个内容'},
+                        {id:3,title:'我是第三个',content:'我是第三个内容'}
+                    ]
+                }
+            },
+            template: `<div class="main">
+                            <Vheader @click.native="headClick"/>
+                            <div class="main2">
+                                    <Vaside>
+                                        <div slot="two">我是二</div>
+                                        <div slot="one">我是一</div>
+                                    </Vaside>
+                                <Vcontent :mylist=List />
+                            </div>
+                        </div>`,
+            components:{
+                Vheader,
+                Vaside,
+                Vcontent
+            },
+            methods:{
+                headClick(){
+                    alert('我是头部点击的')
+                }
+            }
+        }
+
+        // 实例
+        new Vue({
+            el:'#app',
+            data:{
+               
+            },
+            template:'<App></App>',
+            components:{
+                App
+            }
+        })
+
+    </script>
+</body>
+</html>
