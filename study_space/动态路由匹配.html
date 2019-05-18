@@ -36,15 +36,10 @@
             `,
             created() {
                 this.msg = "andorid"
-                // console.log(this.$route);
-                // this.msg = this.$route.params.id
-                
             },
             watch:{
                 "$route"(to,form){
                     this.msg = to.params.id
-                    console.log(to)
-                    console.log(form)
                 }
             },
             
