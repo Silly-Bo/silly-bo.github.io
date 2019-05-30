@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" id="table" width="300">
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    let table = document.querySelector("#table")
+    // table.tHead     获取的是 thead表头
+    // table.tBodies   获取的是 tbody
+    // rows 获取行（tr）
+    // cells  获取单元格（ td 或者 th ）
+
+    console.log(table.tHead) 
+    console.log(table.tHead.rows[0].cells[0]) 
+    console.log(table.tBodies) 
+    console.log(table.tBodies[0].rows) 
+    console.log(table.tBodies[0].rows[0].cells)
+    console.log(table.tBodies[0].rows[0].cells[0])
+
+    
+</script>
+</html>

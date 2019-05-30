@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        margin: 50px auto;
+        position: relative;
+        width: 500px;
+        height: 500px;
+        border: 1px solid #000;
+    }
+    #div{
+        position: absolute;
+        left: 150px;
+        top: 150px;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        /* margin: 10px; */
+        border: 5px solid #ccc;
+        background: red;
+    }
+</style>
+<body>
+    <div id="box">
+        <div id="div"></div>
+    </div>
+    <script>
+    // offset 可视的 可见的
+        // offsetWith   可视宽度 + border + padding
+        // offsetHeight 可视高度 + border + padding
+        // offsetTop    当前元素相对于其 offsetParent 元素的顶部的距离  top + margin
+        // offsetLeft   当前元素相对于其 offsetParent 元素的左侧的距离  left + margin
+        let div = document.querySelector('#div');
+        // console.log(div.offsetWidth);
+        // console.log(div.offsetTop);
+    
+    // client
+        // clientWidth  元素本身 with + padding
+        // clientHeight 元素本身 height + padding
+        // clientTop    元素上边框的宽度 => border
+        // clientLeft   元素左边框的宽度 => border
+        // console.log(div.clientWidth,div.clientHeight); 
+        console.log(div.clientTop,div.clientLeft); 
+    </script>
+</body>
+</html>

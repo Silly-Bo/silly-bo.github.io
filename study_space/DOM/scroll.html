@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        margin: 50px auto;
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border: 1px solid #000;
+        overflow: auto;
+       
+    }
+    #div{
+        position: absolute;
+        width: 100px;
+        background: red;
+    }
+</style>
+<body>
+    <div id="box">
+        <div id="div">
+            你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+            你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+            你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+            你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+            你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+            你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+            你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+            你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+            你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+            你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+        </div>
+    </div>
+    <script>
+        // scrollHeight 如果内容高度比元素自己高度高，则是内容高度，否则就是元素自身的高度
+        // scrollWidth  如果内容宽度比元素自己宽度宽，则是内容宽度，否则就是元素自身的宽度，注意：需要减掉滚动条的宽度
+        // scrollTop 元素上下滚动的高度 
+        // scrollLeft 元素左右滚动的距离
+        let box = document.querySelector('#box');
+
+        // console.log(box.scrollHeight); //内容的高度 
+        // console.log(box.scrollWidth); //内容的宽度 
+
+        setTimeout(()=>{
+            console.log(box.scrollTop)  //上下滚动的高度
+        },2000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">
+        <p>p1</p>
+        <p>p2</p>
+        <p>p3</p>
+        <p>p4</p>
+        <p>p5</p>
+        <p>p6</p>
+    </div>
+
+    <script>
+        // childNodes 获取子节点（包括文本节点，注释节点，元素节点...）
+        // children 获取子元素
+        // firstChild 第0个子节点
+        // firstElementChild 第0个子元素
+        // lastChild 最后一个子节点
+        // lastElementChild  最后一个子元素
+        var div = document.querySelector("#div");
+        var children = div.childNodes
+
+       
+        children = [...children].filter(item=>{
+            return item.nodeType==1  //元素节点 是nodeType = 1
+        })
+        // console.log(children)  // [p, p, p, p, p, p]
+        
+        // console.log(div.childNodes)  //NodeList(13) [text, p, text, p, text, p, text, p, text, p, text, p, text]
+        // console.log(div.children) //HTMLCollection(6) [p, p, p, p, p, p]
+
+        // console.log(div.firstChild); 
+
+        // console.log(div.firstElementChild); //<p>p1</p1>
+        
+        // console.log(div.lastChild) //#text
+        
+        // console.log(div.lastElementChild); //<p>p6</p1>
+        
+
+    </script>
+</body>
+</html>

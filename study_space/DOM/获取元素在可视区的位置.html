@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        height: 100px;
+        border: 1px solid #000;
+    }
+    #box{
+        padding: 10px;
+        background-color: red;
+    }
+</style>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div id="box">5</div>
+    <div>6</div>
+    <div>7</div>
+    
+    <script>
+        let div = document.querySelector('#box')
+        div.onclick =()=>{
+            console.log(div.getBoundingClientRect()) //获取到一个对象 DOMRect {x: 8, y: 64, width: 1333, height: 102, top: 64, …}
+            // bottom: 166   元素底部，相对于可视区顶部的距离
+            // height: 122   元素的可视高度，就是元素自身高度 + padding + border
+            // left: 0       元素左侧距离可视区左边的距离       
+            // right: 1349   元素右侧距离可视区右边的距离
+            // top: 64       元素相对于可视区顶部的距离
+            // width: 1349   元素可视区宽度
+        }
+    </script>
+</body>
+</html>
