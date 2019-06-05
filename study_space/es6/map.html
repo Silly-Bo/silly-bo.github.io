@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr= [
+            ["a",1],
+            ["b",2]
+        ];
+        let map = new Map(arr); 
+        // console.log(map)  //{"a" => 1, "b" => 2}
+
+        // map.clear()
+        // console.log(map) // Map(0) {}
+
+        // console.log(map.has('a'))  //true
+
+        // map.delete('a')
+
+        // console.log(map) //Map(1) {"b" => 2}
+
+        // console.log(map.get('a')) // 1
+
+        // console.log(map.set('c',3)) // Map(3) {"a" => 1, "b" => 2, "c" => 3}
+
+        /*
+        map.clear() //清空所有
+
+        map.has(val) //判断有没有值
+        参数：
+            val 要查找的key的值
+        返回值：
+            true || false 查找到true 没有就返回false
+
+        map.delete(val) //删除对应的项
+        参数：  
+            val 要删除的对应的key
+        返回值：
+            true || false  删除成功或者不成功
+        
+        map.get(val) //获取某一项对应的值
+        参数：
+            val 数据的key值
+        返回值：
+            key对应的value
+        
+        map.set(key,val) //设定一个值
+        参数:
+            key 数据的key值
+            val 对应的key的val值
+        返回值：
+            map对象本身，可以链式操作 map.set("c",3).map("d",4)
+
+        */
+
+
+    </script>
+</body>
+</html>

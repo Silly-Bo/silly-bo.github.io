@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = [1,2,
+        //     ["A","B",
+        //         [2,
+        //             ["P","z"]
+        //         ]
+        //     ]
+        // ];
+
+        // let newArr = arr.flat(2) 
+        // console.log(newArr) //(6) [1, 2, "A", "B", 2, Array(2)]
+
+        // let newArr = arr.flat(3) 
+        // console.log(newArr) //(7) [1, 2, "A", "B", 2, "P", "z"]
+
+        // 遇到不知道有多少个多维数组的时候，可以用 Infinity 无穷大
+
+        // let newArr = arr.flat(Infinity)
+        // console.log(newArr) //(7) [1, 2, "A", "B", 2, "P", "z"]
+
+
+        // flatMap
+        let arr = [
+            ['张三',18],
+            ['李四',28]
+        ]
+        
+        // let newArr = arr.flatMap((item,index)=>{
+        //     console.log(item,index)
+        //     return item
+        // })
+
+        // console.log(newArr) //["张三", 18, "李四", 28]
+
+        // 如果现在只想将他们的姓名放在一个数组
+        
+        let newArr = arr.flatMap((item,index)=>{
+            item = item.filter((item,index)=>{
+                return index == 0   // 张三 0 ，18 1， 李四 0 ，28 1
+            })
+            return item
+        })
+        console.log(newArr) //(2) ["张三", "李四"]
+        
+    </script>
+</body>
+</html>

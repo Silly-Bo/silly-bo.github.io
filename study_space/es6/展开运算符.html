@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组解构
+        let arr = [1,2,3]
+        let arr2 = ['a','b',...arr,'c','d']
+        // console.log(arr2) //["a", "b", 1, 2, 3, "c", "d"]
+
+        // 对象解构
+        let obj = {
+            a: 1,
+            b: 2
+        }
+        let obj2 = {
+            ...obj,
+            c: 'a',
+            d: 'b',
+        }   
+        // console.log(obj2) //{a: 1, b: 2, c: "a", d: "b"}
+        // let {a,b,...c} = obj2;
+        // console.log(a,b,c) //1 2 {c: "a", d: "b"}
+        
+        let obj3 = obj;   //通过这种方式传值，传址，修改值的时候，会将原对象中的值修改了
+        obj3.a = 10
+        console.log(obj)
+
+        // let obj4 = {...obj}   //通过这种方式传值，没有将址传给新的对象，修改值的时候不会将原对象的值修改了
+        // obj4.a = 10
+        // console.log(obj)
+
+
+    </script>
+</body>
+</html>

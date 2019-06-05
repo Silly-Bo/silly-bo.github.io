@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<body>
+    <script>
+        // Array.from(类数组)  把一个类数组转换成真正的数组
+        //      类数组： 有下标，有length
+
+        let list = document.querySelectorAll('#list li')
+
+        console.log(Array.isArray(list)) //false
+
+        list = Array.from(list)  //通过数组构造函数下面的方法
+
+        console.log(Array.isArray(list)) //true
+
+
+        let arr = []
+        list = Array.from(list, function(item,index){
+            console.log(item,index,this)
+            return index
+        },arr)   //通过此方法将this，指向arr
+        
+
+        
+        console.log(Array.of(1,2,3,4,'A','B'))  //将内容转成数组了 [1, 2, 3, 4, "A", "B"]
+        /*
+            类数组转成数组方法：
+                1. Array.from(类数组)
+                2. [...类数组]
+        */
+
+        // 数组Array对象下的方法
+        // Array.from()
+        // Array.of()
+        // Array.isArray()
+
+    </script>
+</body>
+</html>
