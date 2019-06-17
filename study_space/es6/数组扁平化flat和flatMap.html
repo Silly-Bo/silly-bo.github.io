@@ -44,6 +44,7 @@
         // 如果现在只想将他们的姓名放在一个数组
         
         let newArr = arr.flatMap((item,index)=>{
+            console.log(item) //["张三", 18]   ["李四", 28]  
             item = item.filter((item,index)=>{
                 return index == 0   // 张三 0 ，18 1， 李四 0 ，28 1
             })

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [
+            {'city':'北京',
+            'code':'01'
+            },
+            {'city':'上海',
+            'code':'31'
+            },
+            {'city':'深圳',
+            'code':'12'
+            },
+        ]
+        //    let res =  arr.filter((item,index)=>{
+        //         return item.code>10
+        //     })
+            // filter返回数组中符合条件的值，依旧是数组   
+            // console.log(res)
+
+            let res = arr.map((item,index)=>{
+               return item.code+'map'
+            }) 
+            console.log(res)  //(3) ["01map", "31map", "12map"]
+            console.log(arr) // arr 还是之前定义的，没有受到map的操作影响
+
+    </script>
+</body>
+</html>
