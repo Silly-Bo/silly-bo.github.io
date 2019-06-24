@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .inner{
+        height: 150px;
+        width: 2000px;
+        border: 1px solid #ccc;
+    }
+    #box{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 200px;
+        height: 200px;
+        background: skyblue;
+        border: 1px solid #ccc;
+    }
+</style>
+<body>
+    <div id="box">居中的弹窗</div>
+    <div class="inner" >我是内容1</div>
+    <div class="inner" >我是内容2</div>
+    <div class="inner" >我是内容3</div>
+    <div class="inner" >我是内容4</div>
+    <div class="inner" >我是内容5</div>
+    <div class="inner" >我是内容6</div>
+    <div class="inner" >我是内容7</div>
+    <div class="inner" >我是内容8</div>`
+</body>
+<script>    
+    let box = document.querySelector('#box')
+    let resizeCreate = ()=>{
+        let l = (window.innerWidth - box.offsetWidth)/2;
+        let t = (window.innerHeight - box.offsetHeight)/2;
+        let scrollT = document.body.scrollTop || document.documentElement.scrollTop;
+        let scrollL = document.body.scrollLeft || document.documentElement.scrollLeft;
+        box.style.top = t + scrollT + 'px';
+        box.style.left = l + scrollL + 'px';
+    }
+    resizeCreate()
+
+    // 屏幕窗口大小发生变化触发
+    window.onresize = function(){
+        box.style.transition = "1s";
+        resizeCreate()
+    }
+
+    // 滚动条滚动时触发
+    window.onscroll = function(){
+        box.style.transition = "1s";
+        resizeCreate()
+
+        // chrome  firefox mobile 下面可以 但是存在兼容性
+            // window.scrollY // 获取滚动条纵向的位置
+            // window.scrollX // 获取滚动条横向的位置
+            // window.scrollTo(x,y) 到滚动条的位置
+
+        // IE下面获取用 
+        // document.body.scrollLeft  //获取滚动条横向的位置
+        // document.body.scrollTop // 获取滚动条纵向的位置
+        
+        // document.documentElement.scrollLeft //获取滚动条横向的位置
+        // document.documentElement.scrollTop // 获取滚动条纵向的位置
+        
+        // 为了解决浏览器兼容问题，可以这样写 获取和设置
+            // 获取
+        // let top = document.documentElement.scrollTop || document.body.scrollTop;
+        // console.log(top)
+        // setTimeout(function(){
+        //     // 设置
+        //     document.documentElement.scrollTop = document.body.scrollTop =0;
+        // },3000)
+
+    }
+    
+</script>
+</html>

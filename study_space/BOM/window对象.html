@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+
+        /*window.open(URL,target,specs) // 打开一个新窗口
+            URL： 新窗口地址
+
+            target: 属性 新窗口打开方式
+                _blank （新窗口打开）
+                _self （当前窗口打开）
+
+            specs：新窗口规格
+                - width = pixels   窗口的宽度 最小值100
+                - height = pixels  窗口的高度 最小值100
+                - location = yes|no|1|0  是否显示地址栏字段，默认值是yes
+                - menubar = yes|no|1|0  是否显示菜单栏，默认值是yes
+                - resizable = yes|no|1|0  是否可调整窗口大小，默认值是yes
+                - scrollbars = yes|no|1|0 是否显示滚动条，默认值是yes
+                - status = yes|no|1|0  是否添加一个状态栏，默认值是yes
+                - titlebar = yes|no|1|0  是否显示标题栏，默认值是yes
+                - toolbar = yes|no|1|0  是否显示浏览器工具栏，默认值是yes
+        */
+        let btn = document.querySelector('#btn');
+        btn.onclick = function(){
+        //     console.log(111)
+        //     open('https://www.baidu.com','_blank','width=300,height=300,top=200,left=500')
+
+        // window下的弹窗
+            //  console.log(confirm('关闭吗'))
+            
+            console.log(alert('确定吗','请输入'))
+        }
+
+        
+        
+    </script>
+</body>
+</html>
